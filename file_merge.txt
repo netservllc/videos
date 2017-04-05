@@ -1,0 +1,22 @@
+
+def combine_files(file_1, file_2):
+    f1 = open(file_1,"r+")
+    f2 = open(file_2,"r+")
+    f3 = open("file_3.txt", "a")
+
+    for i in f1.read():         #appending file 1
+        f3.write(i)
+
+    f3.write("\n \n")        #New line between content of files
+
+    for i in f2.read():         #appending file 1
+        f3.write(i)
+
+    return "file_3.txt"
+
+output_file = combine_files("f1.txt","f2.txt")
+
+f3 = open(output_file,"r+")
+print(f3.read())
+
+
